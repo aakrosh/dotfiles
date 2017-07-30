@@ -1,0 +1,44 @@
+" flash its screen instead of sounding a beep
+set vb
+" enable ruler
+set ruler
+" enable incremental searches 
+set incsearch
+" enable search highlighting
+set hlsearch
+" be case insensitive
+set ignorecase
+" enable case sensitive search if I search using big letters
+set smartcase
+" enable autoindent
+set cindent
+" enable matching of braces
+set showmatch
+" show at least 4 lines in context to the cursor
+set scrolloff=4
+" options for automatic line wrapping
+set textwidth=80
+"enable color schemes
+syntax on
+" insert spaces when tab is pressed
+set expandtab
+" 4 spaces per tab
+set tabstop=4
+" space characters inserted for indentation
+set shiftwidth=4
+" enable autosave when focus is lost
+set autowrite
+" enables filetype detection and filetype specific plugins
+filetype on
+filetype plugin on 
+" makefile need tabs
+autocmd FileType make set noexpandtab
+" map F2 to spell check
+map <F2> <Esc>:!aspell -c --dont-backup "%"<CR>:e! "%"<CR><CR>
+" map F3 to correct paragraph formatting
+map <F3> <Esc>gqip<CR>
+" map F4 to run make
+map <F4> <Esc>:make<CR>
+" I like comments to be this colo
+highlight comment ctermfg=darkblue
+
