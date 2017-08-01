@@ -3,7 +3,11 @@ all: vim git bash R python perl
 vim:
 	$(MAKE) backup f=~/.vimrc
 	cp src/vimrc ~/.vimrc
-
+	wget https://github.com/gabrielelana/vim-markdown/archive/master.tar.gz
+	cp master.tar.gz ~/.vim
+	cd ~/.vim && tar --strip-components=1 -zxf master.tar.gz
+	cd ~/.vim && rm master.tar.gz
+	
 git:
 	$(MAKE) backup f=~/.gitconfig
 	cp src/gitconfig ~/.gitconfig
