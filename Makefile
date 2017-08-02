@@ -7,7 +7,8 @@ vim:
 	cp master.tar.gz ~/.vim
 	cd ~/.vim && tar --strip-components=1 -zxf master.tar.gz
 	cd ~/.vim && rm master.tar.gz
-	
+	rm master.tar.gz
+
 git:
 	$(MAKE) backup f=~/.gitconfig
 	cp src/gitconfig ~/.gitconfig
