@@ -20,17 +20,21 @@ bash:
 	$(MAKE) backup f=~/.bashrc
 	cp src/bashrc ~/.bashrc
 
-python:
+python: ~/.pyenv
 	# install pyenv if it is not installed
+ifeq (,$(wildcard ~/.pyenv))
 	git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 	echo 'export PYENV_ROOT="$(HOME)/.pyenv"' >> ~/.bashrc
 	echo 'export PATH="$(PYENV_ROOT)/bin:$(PATH)"' >> ~/.bashrc
 	echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 	exec $(SHELL)
-	
+endif
+
 perl:
-	# install perlbrew
+	# install perlbrew if it is not installed
+ifeq (,$(wildcard ~/.perlbrew))
 	wget -O - https://install.perlbrew.pl | bash
+endif
 
 backup:
 	if [ -f $(f) ]; then cp $(f) $(f).old; fi
