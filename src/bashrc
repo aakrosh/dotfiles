@@ -9,9 +9,6 @@ fi
 export CLICOLOR=1
 export LS_COLORS='di=94:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=35:*.rpm=90'
 
-# less should be able to read zipped files
-export LESSOPEN="|~/shared/bin/lesspipe.sh %s"
-
 # exports for third party tools
 
 # exports for development
