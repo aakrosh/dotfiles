@@ -2,7 +2,7 @@ all: vim git bash R python perl
 
 vim:
 	$(MAKE) backup f=~/.vimrc
-	cp src/vimrc ~/.vimrc
+	cp .vimrc ~/.vimrc
 	wget https://github.com/gabrielelana/vim-markdown/archive/master.tar.gz
 	cp master.tar.gz ~/.vim
 	cd ~/.vim && tar --strip-components=1 -zxf master.tar.gz
@@ -11,15 +11,15 @@ vim:
 
 git:
 	$(MAKE) backup f=~/.gitconfig
-	cp src/gitconfig ~/.gitconfig
+	cp .gitconfig ~/.gitconfig
 
 R:
 	$(MAKE) backup f=~/.Rprofile
-	cp src/Rprofile ~/.Rprofile
+	cp .Rprofile ~/.Rprofile
 
 bash:
 	$(MAKE) backup f=~/.bashrc
-	cp src/bashrc ~/.bashrc
+	cp .bashrc ~/.bashrc
 
 python: ~/.pyenv
 	# install pyenv if it is not installed
@@ -38,4 +38,4 @@ ifeq (,$(wildcard ~/.perlbrew))
 endif
 
 backup:
-	if [ -f $(f) ]; then cp $(f) $(f).old; fi
+	if [ -f $(f) ]; then cp $(f) $(f).bak; fi
