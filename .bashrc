@@ -27,17 +27,5 @@ mkpw () {
     openssl rand -base64 48
 }
 
-# system-specific initialization
-if [ $(uname -a | grep -c "Linux") == 1 ]; then
-    eval `dircolors`
-    alias ls='ls --color=auto'
-else
-    # screams internally
-    alias ls='gls --color=auto'
-    alias vi='vim'
-    alias wget='wget --no-check-certificate'
-    export PS1='[\u@\h \W]\$ '
-fi
-
 # export path updates
 export PATH=~/bin:/usr/local/bin:/usr/local/sbin:${PATH}
