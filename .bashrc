@@ -5,10 +5,6 @@ if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
 
-# shell colors
-export CLICOLOR=1
-export LS_COLORS='di=94:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=35:*.rpm=90'
-
 # exports for third party tools
 
 # exports for development
@@ -21,6 +17,7 @@ export LS_COLORS='di=94:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=35:*.rpm=90
 alias vim='vim -n'
 
 # aliases for commands
+alias ls='ls --color=auto'
 alias ll='ls -alh'
 alias ssh='ssh -X'
 alias rsync='rsync -aHxv --numeric-ids --progress -e "ssh -T -c arcfour -o Compression=no -x"'
