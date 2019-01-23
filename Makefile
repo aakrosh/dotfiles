@@ -3,12 +3,10 @@ all: vim git bash R python perl
 vim:
 	$(MAKE) backup f=~/.vimrc
 	cp .vimrc ~/.vimrc
-	wget https://github.com/gabrielelana/vim-markdown/archive/master.tar.gz
-	cp master.tar.gz ~/.vim
-	cd ~/.vim && tar --strip-components=1 -zxf master.tar.gz
-	cd ~/.vim && rm master.tar.gz
-	rm master.tar.gz
-
+	mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+	cd ~/.vim/bundle && git clone https://github.com/gabrielelana/vim-markdown.git
+	cd ~/.vim/bundle && git clone https://github.com/broadinstitute/vim-wdl.git
+	
 git:
 	$(MAKE) backup f=~/.gitconfig
 	cp .gitconfig ~/.gitconfig
