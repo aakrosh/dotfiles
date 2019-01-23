@@ -9,7 +9,3 @@ local({
 q <- function (save="no", ...) {
   quit(save=save, ...)
 }
-
-# load tidyverse by default
-suppressMessages(library(tidyverse))
-suppressMessages(library(magrittr))
