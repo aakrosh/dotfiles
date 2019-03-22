@@ -16,6 +16,8 @@ R:
 	cp .Rprofile ~/.Rprofile
 
 bash:
+	$(MAKE) backup f=~/.bash_profile
+	cp .bash_profile ~/.bash_profile
 	$(MAKE) backup f=~/.bashrc
 	cp .bashrc ~/.bashrc
 
